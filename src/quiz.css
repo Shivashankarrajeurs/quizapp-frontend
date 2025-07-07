@@ -1,0 +1,219 @@
+.quiz-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #181c2f 0%, #23284a 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+  color: #eee;
+  padding: 2rem 0;
+}
+
+.quiz-question-card {
+  background: rgba(35, 40, 74, 0.95);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px #7c3aed55;
+  padding: 2.5rem 2rem;
+  margin: 2rem 0;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  animation: fadeIn 0.5s;
+}
+
+.quiz-question-card h2 {
+  color: #a078ff;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+}
+
+.quiz-question-card p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.quiz-answer-btns {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.quiz-answer-btn {
+  background: linear-gradient(90deg, #7c3aed 0%, #4f46e5 100%);
+  color: #fff;
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 2.2rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px #7c3aed88;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.quiz-answer-btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 30px #a078ffcc;
+}
+
+/* Improved Correct/Wrong Glow */
+.option-correct {
+  background-color: #00d95f !important;
+  color: #fff;
+  box-shadow: 0 0 25px #00ff6e, 0 0 10px #00ff6e inset;
+  animation: pulseCorrect 0.3s ease-in-out;
+}
+
+.option-wrong {
+  background-color: #ff3b3b !important;
+  color: #fff;
+  box-shadow: 0 0 25px #ff3b3b, 0 0 10px #ff3b3b inset;
+  animation: shakeWrong 0.3s ease-in-out;
+}
+
+@keyframes pulseCorrect {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shakeWrong {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+/* Result Screen */
+.quiz-complete {
+  color: #ffd700;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  text-shadow: 0 0 10px #ffd70088;
+}
+
+.result-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.result-actions button {
+  background: linear-gradient(90deg, #7c3aed 0%, #4f46e5 100%);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 2.2rem;
+  cursor: pointer;
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+  box-shadow: 0 0 20px #7c3aedaa;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.result-actions button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 30px #a078ff;
+}
+
+/* Exit Button in Quiz Screen */
+.exit-btn {
+  background: #ff5555;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 15px #ff555588;
+}
+
+.exit-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ff5555;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .quiz-question-card {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
+  }
+
+  .quiz-answer-btns {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .result-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+
+
+
+.quiz-loading-screen {
+  height: 100vh;
+  background: #0f0f0f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #f9f871;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+}
+
+.dot-loader {
+  display: flex;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.dot-loader span {
+  width: 12px;
+  height: 12px;
+  background-color: #f9f871;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.dot-loader span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot-loader span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  to {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+

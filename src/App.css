@@ -1,38 +1,326 @@
-.App {
+/* AuthPages.css - Refined Gaming Neon Theme */
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #181c2f 0%, #23284a 100%);
+  margin: 0;
+  padding: 0;
+}
+
+.auth-container {
+  max-width: 400px;
+  margin: 60px auto;
+  background: #23284a;
+  padding: 36px 40px 32px 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 12px #4b2db655, 0 2px 12px #000a;
   text-align: center;
+  border: 2px solid #6e50ff;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.auth-container h2 {
+  font-size: 2rem;
+  color: #ffd700;
+  margin-bottom: 28px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-shadow: 0 2px 6px #6e50ff44;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.auth-container input {
+  width: 100%;
+  padding: 14px 16px;
+  margin: 12px 0;
+  border: 1.5px solid #6e50ff;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #181c2f;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-shadow: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.auth-container input:focus {
+  border-color: #ffd700;
+  box-shadow: 0 0 6px #ffd70033;
+}
+
+.auth-container input::placeholder {
+  color: #bdbdbd;
+  opacity: 1;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 14px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  background: linear-gradient(90deg, #6e50ff 60%, #ffd700 100%);
+  color: #181c2f;
+  box-shadow: 0 2px 8px #6e50ff22;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.auth-container button:hover {
+  background: linear-gradient(90deg, #ffd700 60%, #6e50ff 100%);
+  color: #23284a;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 12px #ffd70033;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.auth-container .btn-primary {
+  background: linear-gradient(90deg, #6e50ff 60%, #ffd700 100%);
+  color: #181c2f;
+}
+
+.auth-container .btn-google {
+  background: linear-gradient(90deg, #db4437 60%, #ffd700 100%);
+  color: #fff;
+}
+
+.auth-container .btn-guest {
+  background: linear-gradient(90deg, #10b981 60%, #ffd700 100%);
+  color: #fff;
+}
+
+.auth-container .switch-text {
+  margin-top: 22px;
+  font-size: 15px;
+  color: #bdbdbd;
+}
+
+.auth-container .switch-text button {
+  background: none;
+  color: #ffd700;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+  margin-left: 4px;
+}
+
+.auth-container .switch-text button:hover {
+  color: #6e50ff;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(24, 28, 47, 0.92);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-box {
+  background: #23284a;
+  width: 90%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 0 12px #6e50ff55, 0 2px 12px #000a;
+  border: 2px solid #6e50ff;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { transform: scale(0.95); opacity: 0 }
+  to { transform: scale(1); opacity: 1 }
+}
+
+.modal-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #ffd700;
+  text-align: center;
+  font-weight: 700;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 1rem;
+  border: 1.5px solid #6e50ff;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #181c2f;
+  color: #fff;
+}
+
+.modal-input::placeholder {
+  color: #bdbdbd;
+  opacity: 1;
+}
+
+.modal-button {
+  width: 100%;
+  background: linear-gradient(90deg, #db4437 60%, #ffd700 100%);
+  color: #fff;
+  padding: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background 0.3s, color 0.2s;
+}
+
+.modal-button:hover {
+  background: linear-gradient(90deg, #ffd700 60%, #db4437 100%);
+  color: #23284a;
+}
+
+.modal-close {
+  background: transparent;
+  color: #ffd700;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.timer {
+  text-align: center;
+  font-size: 1rem;
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+/* Modern gaming font and design for auth pages */
+body, .auth-container, .auth-container input, .auth-container button, .auth-container p, .auth-container h2 {
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.auth-container h2 {
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+  font-size: 2rem;
+  color: #ffd700;
+  margin-bottom: 28px;
+  font-weight: 800;
+  text-shadow: 0 2px 12px #6e50ff44;
+  letter-spacing: 1.5px;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 14px 16px;
+  margin: 12px 0;
+  border: 1.5px solid #6e50ff;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #181c2f;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-shadow: none;
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+}
+
+.auth-container input:focus {
+  border-color: #ffd700;
+  box-shadow: 0 0 6px #ffd70033;
+}
+
+.auth-container input::placeholder {
+  color: #bdbdbd;
+  opacity: 1;
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+}
+
+.auth-container button, .auth-container .btn, .auth-container .btn-google {
+  width: 100%;
+  padding: 13px;
+  margin-top: 14px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  background: linear-gradient(90deg, #6e50ff 60%, #ffd700 100%);
+  color: #181c2f;
+  box-shadow: 0 2px 8px #6e50ff22;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+}
+
+.auth-container button:hover, .auth-container .btn:hover, .auth-container .btn-google:hover {
+  background: linear-gradient(90deg, #ffd700 60%, #6e50ff 100%);
+  color: #23284a;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 12px #ffd70033;
+}
+
+.auth-container .btn-google {
+  background: linear-gradient(90deg, #db4437 60%, #ffd700 100%);
+  color: #fff;
+}
+
+.auth-container .btn-google:hover {
+  background: linear-gradient(90deg, #ffd700 60%, #db4437 100%);
+  color: #23284a;
+}
+
+.auth-container p, .auth-container label {
+  color: #bdbdbd;
+  font-size: 1rem;
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+}
+
+.auth-container .switch-text button,
+.auth-container p button {
+  background: none;
+  color: #ffd700;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+  margin-left: 4px;
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+}
+
+.auth-container .switch-text button:hover,
+.auth-container p button:hover {
+  color: #6e50ff;
+}
+
+.auth-container {
+  max-width: 400px;
+  margin: 60px auto;
+  background: #23284a;
+  padding: 36px 40px 32px 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 12px #4b2db655, 0 2px 12px #000a;
+  text-align: center;
+  border: 2px solid #6e50ff;
+  position: relative;
+}
+
+@media (max-width: 500px) {
+  .auth-container {
+    padding: 20px 6px 18px 6px;
   }
-  to {
-    transform: rotate(360deg);
+  .auth-container h2 {
+    font-size: 1.3rem;
   }
 }

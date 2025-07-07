@@ -1,0 +1,215 @@
+.leaderboard-page {
+  max-width: 480px;
+  margin: 40px auto;
+  background: #181c2f;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+  padding: 2.5rem 2rem 2rem 2rem;
+  color: #fff;
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+}
+
+.leaderboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.leaderboard-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffd700;
+  margin: 0;
+}
+
+.back-btn {
+  background: #23284a;
+  color: #ffd700;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.back-btn:hover {
+  background: #ffd700;
+  color: #23284a;
+}
+
+.leaderboard-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  background: #23284a;
+  border-radius: 10px;
+  margin-bottom: 0.7rem;
+  padding: 0.9rem 1rem;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s;
+}
+
+.leaderboard-row:hover {
+  background: #2e3356;
+}
+
+.rank {
+  font-weight: bold;
+  color: #ffd700;
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+  width: 2rem;
+  text-align: right;
+}
+
+/* Avatar image for each player */
+.leaderboard-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.8rem;
+  border: 2px solid #7c3aed;
+  background-color: #1f1f2e;
+}
+
+.player-name {
+  flex: 1;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+}
+
+.player-stars {
+  font-weight: bold;
+  color: #ffd700;
+  margin-left: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Display streak next to stars */
+.player-streak {
+  margin-left: 0.8rem;
+  color: #ff6b00;
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+/* Crown on rank 1 */
+.crown {
+  font-size: 1.3rem;
+  margin-left: 0.3rem;
+  color: #ffd700;
+  animation: crown-glow 1s infinite alternate;
+}
+
+@keyframes crown-glow {
+  from { text-shadow: 0 0 6px #ffd70088; }
+  to   { text-shadow: 0 0 12px #ffd700; }
+}
+
+.empty-row {
+  text-align: center;
+  color: #aaa;
+  padding: 1.5rem 0;
+  font-size: 1.1rem;
+}
+
+/* Ensure Orbitron is used consistently */
+.leaderboard-page,
+.leaderboard-header h1,
+.back-btn,
+.leaderboard-list,
+.leaderboard-row,
+.rank,
+.player-name,
+.player-stars,
+.empty-row {
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif !important;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 500px) {
+  .leaderboard-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.7rem;
+    text-align: center;
+  }
+
+  .leaderboard-row {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .player-stars,
+  .player-streak {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .player-name {
+    margin-top: 0.4rem;
+  }
+
+  .leaderboard-avatar {
+    margin-right: 0.5rem;
+  }
+}
+
+
+
+.leaderboard-loader {
+  text-align: center;
+  color: #f9f871;
+  font-family: 'Orbitron', sans-serif;
+  margin: 2rem auto;
+}
+
+.dot-loader {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.dot-loader span {
+  width: 12px;
+  height: 12px;
+  background-color: #f9f871;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.dot-loader span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot-loader span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  to {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
