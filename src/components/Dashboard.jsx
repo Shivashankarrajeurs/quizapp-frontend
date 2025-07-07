@@ -165,7 +165,7 @@ export default function Dashboard() {
       <header className="header">
         <div className="stars gold-glow">
           <FaStar className="star-icon" />
-          <span>{profile?.stars ?? 0} Stars</span>
+          <span>{profile?.stars ?? 0}</span>
         </div>
 
         <div className="profile-container">
