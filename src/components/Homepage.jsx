@@ -20,18 +20,19 @@ function HomePage() {
     <>
       {/* Gaming Neon Navbar */}
       <nav className="gaming-navbar">
-        <div className="navbar-content">
-          <span className="navbar-brand">QUIZZY.IN</span>
+  <div className="navbar-content">
+  <span className="navbar-brand">QUIZZY.IN</span>
 
-          <div className="navbar-links">
-            <a href="/" className="active">Home</a>
-            <a href="#" onClick={handleAboutClick}>About</a>
-          </div>
+  <div className="navbar-links">
+    <a href="/" className="active">Home</a>
+    <a href="#" onClick={handleAboutClick}>About</a>
+  </div>
 
-          <button className="neon-btn" onClick={() => navigate("/login")}>
-            Sign In
-          </button>
-        </div>
+  <button className="neon-btn" onClick={() => navigate("/login")}>
+    Sign In
+  </button>
+</div>
+
       </nav>
 
       {/* Main Content */}
