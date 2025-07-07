@@ -143,7 +143,7 @@ body {
 
 /* Footer */
 .neon-footer {
-  width: 100%;
+  margin-top: auto;
   background: #191c2b;
   color: #ffd700;
   text-align: center;
@@ -153,10 +153,11 @@ body {
   border-top: 2px solid #6e50ff;
   box-shadow: 0 -2px 12px #6e50ff22;
   letter-spacing: 0.5px;
-  margin-top: 40px;
   position: relative;
   z-index: 10;
+  width: 100%;
 }
+
 
 /* Responsive */
 @media (max-width: 700px) {
@@ -291,5 +292,110 @@ body,
   background-color: #8a2be2;
   color: #fff;
   box-shadow: 0 0 20px #ffd700, 0 0 30px #8a2be2;
+}
+
+
+
+
+/* --- Improved Responsive Styles --- */
+@media (max-width: 768px) {
+  .navbar-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  .neon-btn {
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+  }
+
+  .homepage-container {
+    margin: 40px auto;
+    width: 90%;
+    padding: 1.5rem 1rem;
+  }
+
+  .homepage-title {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+
+  .homepage-lead {
+    font-size: 1rem;
+  }
+
+  .neon-btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .homepage-title {
+    font-size: 1.4rem;
+  }
+
+  .homepage-lead {
+    font-size: 0.95rem;
+  }
+
+  .neon-btn,
+  .neon-btn-lg {
+    width: 100%;
+    max-width: 220px;
+    padding: 0.8rem 1.1rem;
+    font-size: 1rem;
+  }
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(120deg, #181c2f 0%, #23284a 100%);
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+}
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.homepage-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 540px;
+  width: 90%;
+  background: rgba(35, 40, 74, 0.82);
+  border-radius: 22px;
+  box-shadow: 0 0 32px #00ffe722, 0 2px 24px #6e50ff22;
+  text-align: center;
+  border: 2.5px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  overflow: hidden;
+  min-height: 70vh;
 }
 
